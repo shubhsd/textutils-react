@@ -2,11 +2,21 @@ import React, { useState } from 'react'
 
 export default function TextForm(props) {
 
-    const [text, setText] = useState();
+    const [text, setText] = useState('');
     // string 'enter text here' is the default value for the state defined in the hook.
 
     const handleUpperCaseClick = () => {
         let newText = text.toUpperCase();
+        setText(newText);
+    };
+
+    const handleLowerCaseClick = () => {
+        let newText = text.toLowerCase();
+        setText(newText);
+    };
+
+    const handleClearClick = () => {
+        let newText = '';
         setText(newText);
     };
 
@@ -15,12 +25,27 @@ export default function TextForm(props) {
     };
 
     return (
-        <div>
-            <h1>{props.heading}</h1>
-            <div className="mb-3">
-                <textarea className="form-control" id="myBox" rows="8" onChange={handleOnChange} value={text} placeholder='Enter text here'></textarea>
+        <>
+            <div className='container'>
+                <h1>{props.heading}</h1>
+                <div className="mb-3">
+                    <textarea className="form-control" id="myBox" rows="8" onChange={handleOnChange} value={text} placeholder='Enter text here'></textarea>
+                </div>
+                <button className='btn btn-primary mx-2' onClick={handleUpperCaseClick}>Convert to uppercase</button>
+                <button className='btn btn-primary mx-2' onClick={handleLowerCaseClick}>Convert to lowercase</button>
+                <button className='btn btn-primary mx-2' onClick={handleClearClick}>Clear text</button>
+                {/* mx-2 bootstrap class gives margin in x  */}
             </div>
-            <button className='btn btn-primary' onClick={handleUpperCaseClick}>Convert to uppercase</button>
-        </div>
+
+            <div className='container my-3'>
+                <h3>Your text summary</h3>
+                {/* text.split gives array also note that .split('') makes array length = 1. Therefor space will be counted as a word */}
+                <p>{text.split(" ").length} words and {text.length} characters.</p>
+                <p>{0.008 * text.split(" ").length} Minutes read.</p>
+
+                <h3>Preview</h3>
+                <p>{text}</p>
+            </div>
+        </>
     )
 }
