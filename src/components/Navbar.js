@@ -42,14 +42,14 @@ function Navbar(props) {
                         </div>
                     </div>
 
-                    {/* <form className="d-flex"> */}
-                        {/* <div className={`form-check form-switch text-${props.mode === 'light' ? 'dark' : 'light'}`}>
+                    <form className="d-flex">
+                        <div className={`form-check form-switch text-${props.mode === 'light' ? 'dark' : 'light'}`}>
                             <input className="form-check-input" onClick={() => props.toggleMode(null)} type="checkbox" id="flexSwitchCheckDefault" />
                             <label className="form-check-label" htmlFor="flexSwitchCheckDefault">Toggle mode</label>
-                        </div> */}
+                        </div>
                         {/* <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
                         <button className="btn btn-danger" type="submit">Search</button> */}
-                    {/* </form> */}
+                    </form>
                 </div>
             </div>
         </nav>
