@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { Link } from 'react-router-dom'
 
 // Proptypes check the type of props received and validates if it is correct or not.
 // Default props - if let say value of the written prop is not passed then it will write that default value there instead of showing error
@@ -19,10 +20,10 @@ function Navbar(props) {
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                         <li className="nav-item">
-                            <a className="nav-link active" aria-current="page" href="/">Home</a>
+                            <Link className="nav-link active" aria-current="page" to="/">Home</Link>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="/">{props.aboutText}</a>
+                            <Link className="nav-link" to="/about">{props.aboutText}</Link>
                         </li>
                     </ul>
 

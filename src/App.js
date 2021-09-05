@@ -5,6 +5,14 @@ import Alert from './components/Alert';
 import Navbar from './components/Navbar';
 import TextForm from './components/TextForm';
 
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
+
+
 function App() {
 
   const [mode, setMode] = useState('light'); //Tells wheather dark mode is enabled or not
@@ -46,14 +54,23 @@ function App() {
   };
 
   return (
-    <div>
-      <Navbar title='TextUtils' aboutText='About' mode={mode} toggleMode={toggleMode} />
-      <Alert alert={alert} />
-      <div className='container my-3'>
-        <TextForm heading='Enter the text to analyze below' mode={mode} showAlert={showAlert} />
-        <About />
-      </div>
-    </div>
+    <>
+      <Router>
+        <Navbar title='TextUtils' aboutText='About' mode={mode} toggleMode={toggleMode} />
+        <Alert alert={alert} />
+        <div className='container my-3'>
+          <Switch>
+            {/* Use exact to let our route match the exact component other wise it will fetch partially */}
+            <Route exact path="/">
+              <TextForm heading='Enter the text to analyze below' mode={mode} showAlert={showAlert} />
+            </Route>
+            <Route exact path="/about">
+              <About />
+            </Route>
+          </Switch>
+        </div>
+      </Router>
+    </>
   );
 }
 
