@@ -22,7 +22,7 @@ function App() {
       setMode('dark');
       document.body.style.backgroundColor = '#042743';
       showAlert('Dark mode has been enabled', 'success');
-      document.title = 'TextUtils - Dark Mode';
+      // document.title = 'TextUtils - Dark Mode';
 
       //Interval to display flash kind of a message in browser tab - not a good UX. (Just for understanding purpose)
       // setInterval(() => {
@@ -37,7 +37,7 @@ function App() {
       setMode('light');
       document.body.style.backgroundColor = 'white';
       showAlert('Light mode has been enabled', 'success');
-      document.title = 'TextUtils - Light Mode';
+      // document.title = 'TextUtils - Light Mode';
     }
   };
 
@@ -61,10 +61,10 @@ function App() {
           <Switch>
             {/* Use exact to let our route match the exact component other wise it will fetch partially */}
             <Route exact path="/">
-              <TextForm heading='Enter the text to analyze below' mode={mode} showAlert={showAlert} />
+              <TextForm heading='Try TextUtils - word counter, character counter, remove extra spaces' mode={mode} showAlert={showAlert} />
             </Route>
             <Route exact path="/about">
-              <About />
+              <About mode={mode} />
             </Route>
           </Switch>
         </div>
