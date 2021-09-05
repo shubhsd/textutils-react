@@ -1,16 +1,15 @@
 import React, { useState } from 'react'
 import './App.css';
-import About from './components/About';
+// import About from './components/About';
 import Alert from './components/Alert';
 import Navbar from './components/Navbar';
 import TextForm from './components/TextForm';
 
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
-} from "react-router-dom";
+// import {
+//   BrowserRouter as Router,
+//   Switch,
+//   Route
+// } from "react-router-dom";
 
 
 function App() {
@@ -55,21 +54,21 @@ function App() {
 
   return (
     <>
-      <Router>
+      {/* <Router> */}
         <Navbar title='TextUtils' aboutText='About' mode={mode} toggleMode={toggleMode} />
         <Alert alert={alert} />
         <div className='container my-3'>
-          <Switch>
+          {/* <Switch> */}
             {/* Use exact to let our route match the exact component other wise it will fetch partially */}
-            <Route exact path="/">
+            {/* <Route exact path="/"> */}
               <TextForm heading='Enter the text to analyze below' mode={mode} showAlert={showAlert} />
-            </Route>
-            <Route exact path="/about">
+            {/* </Route> */}
+            {/* <Route exact path="/about">
               <About />
             </Route>
-          </Switch>
+          </Switch> */}
         </div>
-      </Router>
+      {/* </Router> */}
     </>
   );
 }
