@@ -18,13 +18,13 @@ function App() {
       document.title = 'TextUtils - Dark Mode';
 
       //Interval to display flash kind of a message in browser tab - not a good UX. (Just for understanding purpose)
-      setInterval(() => {
-        document.title = 'TextUtils is amazing';
-      }, 2000);
+      // setInterval(() => {
+      //   document.title = 'TextUtils is amazing';
+      // }, 2000);
 
-      setInterval(() => {
-        document.title = 'Install text utils now';
-      }, 1500);
+      // setInterval(() => {
+      //   document.title = 'Install text utils now';
+      // }, 1500);
 
     } else {
       setMode('light');
