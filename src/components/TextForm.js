@@ -23,13 +23,22 @@ export default function TextForm(props) {
         props.showAlert('Text cleared', 'success');
     };
 
+    // const handleCopy = () => {
+    //     const text = document.getElementById('myBox');
+    //     text.select();
+    //     navigator.clipboard.writeText(text.value);
+    //     document.getSelection().removeAllRanges(); // To remove that highlighted text selection preview 
+    //     props.showAlert('Copied to clipboard', 'success');
+    // };
+
+    // Method 2 to implement handle copy
+
     const handleCopy = () => {
-        const text = document.getElementById('myBox');
-        text.select();
-        navigator.clipboard.writeText(text.value);
-        document.getSelection().removeAllRanges(); // To remove that highlighted text selection preview 
+        // Navigator api automatically copies text to clipboard
+        navigator.clipboard.writeText(text);
         props.showAlert('Copied to clipboard', 'success');
     };
+
 
     const handleExtraSpaces = () => {
         let newText = text.split(/[ ]+/);
@@ -59,7 +68,7 @@ export default function TextForm(props) {
             <div className='container my-3' style={{ color: props.mode === 'dark' ? 'white' : '#042743' }}>
                 <h3>Your text summary</h3>
                 {/* text.split gives array also note that .split('') makes array length = 1. Therefor space will be counted as a word */}
-                <p>{text.split(" ").filter((element) => { return element.length !== 0 }).length} words and {text.length} characters.</p>
+                <p>{text.split(/\s+/).filter((element) => { return element.length !== 0 }).length} words and {text.length} characters.</p>
                 <p>{0.008 * text.split(" ").filter((element) => { return element.length !== 0 }).length} Minutes read.</p>
 
                 <h3>Preview</h3>

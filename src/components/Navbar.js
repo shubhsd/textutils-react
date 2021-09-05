@@ -20,7 +20,7 @@ function Navbar(props) {
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                         <li className="nav-item">
-                            <Link className="nav-link active" aria-current="page" to="/">Home</Link>
+                            <Link className="nav-link" aria-current="page" to="/">Home</Link>
                         </li>
                         <li className="nav-item">
                             <Link className="nav-link" to="/about">{props.aboutText}</Link>
@@ -36,9 +36,9 @@ function Navbar(props) {
                         </div>
                         <div className="bg-warning rounded mx-2" style={{ height: '30px', width: '30px', cursor: 'pointer' }} onClick={() => props.toggleMode('warning')}>
                         </div>
-                        <div className="bg-light rounded mx-2" style={{ height: '30px', width: '30px', cursor: 'pointer' }} onClick={() => props.toggleMode('light')}>
+                        <div className="bg-light rounded mx-2" style={{ height: '30px', width: '30px', cursor: 'pointer', border: '1px solid' }} onClick={() => props.toggleMode('light')}>
                         </div>
-                        <div className="bg-dark rounded mx-2" style={{ height: '30px', width: '30px', cursor: 'pointer' }} onClick={() => props.toggleMode('dark')}>
+                        <div className="bg-dark rounded mx-2" style={{ height: '30px', width: '30px', cursor: 'pointer', border: '1px solid white' }} onClick={() => props.toggleMode('dark')}>
                         </div>
                     </div>
 
