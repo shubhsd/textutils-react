@@ -15,10 +15,22 @@ function App() {
       setMode('dark');
       document.body.style.backgroundColor = '#042743';
       showAlert('Dark mode has been enabled', 'success');
+      document.title = 'TextUtils - Dark Mode';
+
+      //Interval to display flash kind of a message in browser tab - not a good UX. (Just for understanding purpose)
+      setInterval(() => {
+        document.title = 'TextUtils is amazing';
+      }, 2000);
+
+      setInterval(() => {
+        document.title = 'Install text utils now';
+      }, 1500);
+
     } else {
       setMode('light');
       document.body.style.backgroundColor = 'white';
       showAlert('Light mode has been enabled', 'success');
+      document.title = 'TextUtils - Light Mode';
     }
   };
 
