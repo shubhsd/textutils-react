@@ -11,11 +11,11 @@ export default function About(props) {
         color: props.mode === 'dark' ? 'white' : '#204f75',
         backgroundColor: props.mode === 'dark' ? 'rgb(36 74 104)' : 'white',
         border: '1px solid',
-        borderColor: props.mode === 'dark' ? 'white' : '#042743',
+        borderColor: props.mode === 'dark' ? 'white' : '#042743'
     }
 
     return (
-        <div className='container' style={myStyle, { border: 0 }}>
+        <div className='container' style={myStyle ,{ border: 0 }}>
             <h1 className='my-3' style={{ color: props.mode === 'dark' ? 'white' : '#042743' }}>About Us
             </h1>
             <div className="accordion" id="accordionExample" style={myStyle}>
